@@ -17,7 +17,7 @@ export const SvgLogo: React.FC<IProps> = ({ width, height }) => {
 	return (
 		<Container width={width} height={height} viewBox='0 0 462.8 462.8'>
 			<linearGradient x1='0%' y1='0%' x2='0%' y2='100%' id='logo'>
-				<stop stop-color={MyTheme.colors.teal} offset='0' />
+				<stop stop-color={MyTheme.colors.blue} offset='0' />
 				<stop stop-color={MyTheme.colors.blueDark} offset='100%' />
 			</linearGradient>
 			<g>

@@ -2,6 +2,7 @@ import { Global } from '@emotion/core';
 import { ThemeProvider } from 'emotion-theming';
 import React from 'react';
 
+import { Circle } from './components/Circle';
 import { Header } from './partials/header/header';
 import { MyTheme, Styled } from './theme';
 
@@ -28,6 +29,7 @@ export const ClearGrowth = () => {
 				}}
 			/>
 			<Container>
+				<Circle />
 				<Header />
 			</Container>
 		</ThemeProvider>

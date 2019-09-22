@@ -1,18 +1,12 @@
-import { Circle } from 'cleargrowth/components/Circle';
 import { SvgLogo } from 'cleargrowth/components/Logo';
 import { Styled } from 'cleargrowth/theme';
 import React from 'react';
 
 const Container = Styled('header')(({ theme }) => ({
-	display: 'flex'
-}));
-
-const Content = Styled('div')(({ theme }) => ({
-	flex: 1,
-	padding: `${theme.padding[3]} ${theme.padding[6]}`,
 	display: 'flex',
 	flexDirection: 'column',
-	justifyContent: 'space-around',
+	padding: `${theme.padding[3]} ${theme.padding[6]}`,
+	color: theme.colors.blueDarkest,
 	maxWidth: theme.screens.lg,
 	margin: '0 auto',
 	zIndex: theme.zIndex[10]
@@ -56,6 +50,7 @@ const PrimaryButton = Styled('button')(({ theme }) => ({
 	padding: `${theme.padding[3]} ${theme.padding[4]}`,
 	margin: `${theme.margin[2]} ${theme.margin[2]}`,
 	fontWeight: theme.fontWeights.semibold,
+	boxShadow: theme.shadows.sm,
 	cursor: 'pointer',
 	outline: 'none',
 	userSelect: 'none'
@@ -63,6 +58,7 @@ const PrimaryButton = Styled('button')(({ theme }) => ({
 
 const SecondaryButton = Styled(PrimaryButton)(({ theme }) => ({
 	border: `${theme.borderWidths.sm} solid ${theme.colors.greyLighter}`,
+	boxShadow: 'none',
 	color: theme.colors.primary,
 	backgroundColor: theme.colors.white,
 	fontWeight: theme.fontWeights.bold
@@ -71,21 +67,18 @@ const SecondaryButton = Styled(PrimaryButton)(({ theme }) => ({
 export const Header = () => {
 	return (
 		<Container>
-			<Content>
-				<Section>
-					<SvgLogo width={'48'} height={'48'} />
-					<Title>ClearGrowth</Title>
-				</Section>
-				<VSection>
-					<Slogan>A clear overview of your startup performance</Slogan>
-					<Description>Get insights and stay engaged with your customers</Description>
-				</VSection>
-				<Section>
-					<PrimaryButton>Start free trial</PrimaryButton>
-					<SecondaryButton>See Demo</SecondaryButton>
-				</Section>
-			</Content>
-			<Circle />
+			<Section>
+				<SvgLogo width={'48'} height={'48'} />
+				<Title>ClearGrowth</Title>
+			</Section>
+			<VSection>
+				<Slogan>A clear overview of your startup performance</Slogan>
+				<Description>Get insights and stay engaged with your customers</Description>
+			</VSection>
+			<Section>
+				<PrimaryButton>Start free trial</PrimaryButton>
+				<SecondaryButton>See Demo</SecondaryButton>
+			</Section>
 		</Container>
 	);
 };
